@@ -168,57 +168,79 @@
 			"patterns": [
 				{
 					"name": "meta.decorator",
-					"begin": "@(id|autoid|optional|extensibility|final|appendable|mutable|position|value|key|must_understand|default_literal|default|range|min|max|unit|bit_bound|external|nested|verbatim|service|oneway|ami|non_serialized)\\b",
-					"beginCaptures": {
+					"match": "@(id|autoid|optional|extensibility|final|appendable|mutable|position|value|key|must_understand|default_literal|default|range|min|max|unit|bit_bound|external|nested|verbatim|service|oneway|ami|non_serialized)\\b(?!\\()",
+					"captures": {
 						"0": {
 							"name": "entity.name.function.decorator"
 						}
+					}
+				},
+				{
+					"name": "meta.decorator",
+					"begin": "@(id|autoid|optional|extensibility|final|appendable|mutable|position|value|key|must_understand|default_literal|default|range|min|max|unit|bit_bound|external|nested|verbatim|service|oneway|ami|non_serialized)(\\()",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.function.decorator"
+						},
+						"2": {
+							"name": "punctuation.section.parens.begin"
+						}
 					},
-					"end": "(?<=\\))|(?=[;{])|$",
+					"end": "\\)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.parens.end"
+						}
+					},
 					"patterns": [
 						{
-							"begin": "\\(",
-							"end": "\\)",
-							"patterns": [
-								{
-									"include": "#identifier"
-								},
-								{
-									"include": "#literals"
-								},
-								{
-									"name": "punctuation.separator",
-									"match": ","
-								}
-							]
+							"include": "#identifier"
+						},
+						{
+							"include": "#literals"
+						},
+						{
+							"name": "punctuation.separator",
+							"match": ","
 						}
 					]
 				},
 				{
 					"name": "meta.decorator",
-					"begin": "@([a-zA-Z_][a-zA-Z0-9_]*)",
-					"beginCaptures": {
+					"match": "@([a-zA-Z_][a-zA-Z0-9_]*)\\b(?!\\()",
+					"captures": {
 						"0": {
 							"name": "entity.name.function.decorator"
 						}
+					}
+				},
+				{
+					"name": "meta.decorator",
+					"begin": "@([a-zA-Z_][a-zA-Z0-9_]*)(\\()",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.function.decorator"
+						},
+						"2": {
+							"name": "punctuation.section.parens.begin"
+						}
 					},
-					"end": "(?<=\\))|(?=[;{])|$",
+					"end": "\\)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.parens.end"
+						}
+					},
 					"patterns": [
 						{
-							"begin": "\\(",
-							"end": "\\)",
-							"patterns": [
-								{
-									"include": "#identifier"
-								},
-								{
-									"include": "#literals"
-								},
-								{
-									"name": "punctuation.separator",
-									"match": ","
-								}
-							]
+							"include": "#identifier"
+						},
+						{
+							"include": "#literals"
+						},
+						{
+							"name": "punctuation.separator",
+							"match": ","
 						}
 					]
 				}
