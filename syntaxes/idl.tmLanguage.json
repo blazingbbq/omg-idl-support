@@ -12,6 +12,9 @@
 			"include": "#annotations"
 		},
 		{
+			"include": "#type_declarations"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -31,6 +34,87 @@
 		}
 	],
 	"repository": {
+		"type_declarations": {
+			"patterns": [
+				{
+					"match": "\\b(struct)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.declaration.struct"
+						},
+						"2": {
+							"name": "entity.name.type.struct"
+						}
+					}
+				},
+				{
+					"match": "\\b(union)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.declaration.union"
+						},
+						"2": {
+							"name": "entity.name.type.union"
+						}
+					}
+				},
+				{
+					"match": "\\b(enum)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.declaration.enum"
+						},
+						"2": {
+							"name": "entity.name.type.enum"
+						}
+					}
+				},
+				{
+					"match": "\\b(bitmask)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.declaration"
+						},
+						"2": {
+							"name": "entity.name.type.bitmask"
+						}
+					}
+				},
+				{
+					"match": "\\b(bitset)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.declaration"
+						},
+						"2": {
+							"name": "entity.name.type.bitset"
+						}
+					}
+				},
+				{
+					"match": "\\b(interface)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.declaration.interface"
+						},
+						"2": {
+							"name": "entity.name.type.interface"
+						}
+					}
+				},
+				{
+					"match": "\\b(module)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "keyword.declaration.namespace"
+						},
+						"2": {
+							"name": "entity.name.namespace"
+						}
+					}
+				}
+			]
+		},
 		"preprocessor": {
 			"patterns": [
 				{
