@@ -3,6 +3,9 @@
 	"name": "IDL",
 	"patterns": [
 		{
+			"include": "#preprocessor"
+		},
+		{
 			"include": "#comments"
 		},
 		{
@@ -28,6 +31,39 @@
 		}
 	],
 	"repository": {
+		"preprocessor": {
+			"patterns": [
+				{
+					"name": "meta.preprocessor.include.idl",
+					"begin": "^\\s*(#\\s*include)\\s*",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.directive.include.idl"
+						}
+					},
+					"end": "$",
+					"patterns": [
+						{
+							"name": "string.quoted.double.include.idl",
+							"match": "\"[^\"]*\""
+						},
+						{
+							"name": "string.quoted.other.lt-gt.include.idl",
+							"match": "<[^>]*>"
+						}
+					]
+				},
+				{
+					"name": "meta.preprocessor.idl",
+					"match": "^\\s*#\\s*(define|undef|ifdef|ifndef|if|elif|else|endif|pragma)\\b",
+					"captures": {
+						"0": {
+							"name": "keyword.control.directive.idl"
+						}
+					}
+				}
+			]
+		},
 		"comments": {
 			"patterns": [
 				{
