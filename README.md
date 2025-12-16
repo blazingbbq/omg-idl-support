@@ -1,65 +1,69 @@
-# omg-idl-support README
+# OMG IDL Support
 
-This is the README for your extension "omg-idl-support". After writing up a brief description, we recommend including the following sections.
+Syntax highlighting support for OMG Interface Definition Language (IDL) files in Visual Studio Code.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension provides comprehensive syntax highlighting for OMG IDL 4.2 specification, including:
 
-For example if there is an image subfolder under your extension project workspace:
+### Language Constructs
+- **Type Declarations**: `struct`, `union`, `enum`, `bitmask`, `bitset`, `interface`, `module`
+- **Type Keywords**: Primitive types (`long`, `short`, `float`, `double`, `char`, `boolean`, `octet`, etc.)
+- **Extended Types**: `int8`, `int16`, `int32`, `int64`, `uint8`, `uint16`, `uint32`, `uint64`
+- **Template Types**: `sequence`, `string`, `wstring`, `fixed`
 
-\!\[feature X\]\(images/feature-x.png\)
+### Annotations
+Full support for standard IDL annotations:
+- `@key`, `@optional`, `@id`, `@position`, `@bit_bound`
+- `@extensibility`, `@final`, `@appendable`, `@mutable`
+- `@default`, `@min`, `@max`, `@range`, `@unit`
+- `@non_serialized`, `@must_understand`, `@value`
+- And many more...
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### Literals and Operators
+- **Numeric Literals**: Hexadecimal, octal, decimal, floating-point, and fixed-point
+- **String Literals**: Standard and wide strings with escape sequences
+- **Character Literals**: Standard and wide characters
+- **Boolean Literals**: `TRUE` and `FALSE`
+- **Operators**: Arithmetic, bitwise, and assignment operators
+
+### Preprocessor Directives
+- `#include` statements (with quoted and angle-bracket formats)
+- `#define`, `#ifdef`, `#ifndef`, `#if`, `#elif`, `#else`, `#endif`, `#pragma`
+
+### Comments
+- Line comments (`//`)
+- Block comments (`/* */`)
+
+## Usage
+
+Simply open any `.idl` file and the extension will automatically provide syntax highlighting.
+
+## Example
+
+```idl
+#include "common.idl"
+
+module MyModule {
+    @extensibility(MUTABLE)
+    struct MyStruct {
+        @key long id;
+        @optional string name;
+        sequence<octet> data;
+    };
+};
+```
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+No additional requirements or dependencies.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+This extension does not add any VS Code settings.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release with comprehensive OMG IDL 4.2 syntax highlighting support.
