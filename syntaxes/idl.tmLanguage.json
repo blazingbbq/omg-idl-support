@@ -81,7 +81,7 @@
 			"patterns": [
 				{
 					"name": "meta.annotation.standard.idl",
-					"begin": "@(optional|extensibility|bit_bound|position)\\b",
+					"begin": "@(id|autoid|optional|extensibility|final|appendable|mutable|position|value|key|must_understand|default_literal|default|range|min|max|unit|bit_bound|external|nested|verbatim|service|oneway|ami|non_serialized)\\b",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.standard.idl"
