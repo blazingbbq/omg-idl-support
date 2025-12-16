@@ -1,0 +1,25 @@
+{
+  "name": "omg-idl-support",
+  "displayName": "OMG IDL Support",
+  "description": "OMG DDS IDL support (.idl file syntax highlighting)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "idl",
+      "aliases": ["IDL", "idl"],
+      "extensions": [".idl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "idl",
+      "scopeName": "source.idl",
+      "path": "./syntaxes/idl.tmLanguage.json"
+    }]
+  }
+}
