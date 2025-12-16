@@ -3,6 +3,7 @@
   "displayName": "OMG IDL Support",
   "description": "OMG DDS IDL support (.idl file syntax highlighting)",
   "version": "1.0.0",
+  "publisher": "blazingbbq",
   "license": "MIT",
   "repository": {
     "type": "git",
