@@ -64,6 +64,6 @@ This extension does not add any VS Code settings.
 
 ## Release Notes
 
-### 0.0.1
+### 1.0.0
 
 Initial release with comprehensive OMG IDL 4.2 syntax highlighting support.

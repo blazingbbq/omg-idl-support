@@ -2,7 +2,7 @@
 
 All notable changes to the "omg-idl-support" extension will be documented in this file.
 
-## [0.0.1] - 2025-12-16
+## [1.0.0] - 2025-12-16
 
 ### Added
 - Initial release with comprehensive OMG IDL 4.2 syntax highlighting support

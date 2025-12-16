@@ -2,7 +2,7 @@
   "name": "omg-idl-support",
   "displayName": "OMG IDL Support",
   "description": "OMG DDS IDL support (.idl file syntax highlighting)",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.107.0"
   },
