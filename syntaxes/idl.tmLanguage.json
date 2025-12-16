@@ -50,11 +50,11 @@
 		},
 		"declaration_keywords": {
 			"name": "keyword.other.idl",
-			"match": "\\b(module|const|typedef|struct|union|enum|native|switch|case|default)\\b"
+			"match": "\\b(abstract|alias|attribute|bitfield|bitmask|bitset|case|component|connector|const|consumes|context|custom|default|emits|enum|eventtype|exception|factory|finder|getraises|home|import|in|inout|interface|local|manages|map|mirrorport|module|multiple|native|oneway|out|primarykey|private|port|porttype|provides|public|publishes|raises|readonly|setraises|struct|supports|switch|truncatable|typedef|typeid|typename|typeprefix|union|uses|valuetype|void)\\b"
 		},
 		"type_keywords": {
 			"name": "storage.type.idl",
-			"match": "\\b(float|double|long|short|unsigned|char|wchar|boolean|octet|string|wstring|sequence|fixed)\\b"
+			"match": "\\b(any|boolean|char|double|fixed|float|int8|int16|int32|int64|long|Object|octet|sequence|short|string|uint8|uint16|uint32|uint64|unsigned|ValueBase|wchar|wstring)\\b"
 		},
 		"boolean_literal": {
 			"name": "constant.language.boolean.idl",
