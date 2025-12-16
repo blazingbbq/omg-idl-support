@@ -44,6 +44,34 @@
 		"annotations": {
 			"patterns": [
 				{
+					"name": "meta.annotation.standard.idl",
+					"begin": "@(optional|extensibility|bit_bound|position)\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "storage.type.annotation.standard.idl"
+						}
+					},
+					"end": "(?<=\\))|(?=[;{])|$",
+					"patterns": [
+						{
+							"begin": "\\(",
+							"end": "\\)",
+							"patterns": [
+								{
+									"include": "#identifier"
+								},
+								{
+									"include": "#literals"
+								},
+								{
+									"name": "punctuation.separator.idl",
+									"match": ","
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "meta.annotation.idl",
 					"begin": "@([a-zA-Z_][a-zA-Z0-9_]*)",
 					"beginCaptures": {
