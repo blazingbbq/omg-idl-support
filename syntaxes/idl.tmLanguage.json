@@ -80,11 +80,11 @@
 		"annotations": {
 			"patterns": [
 				{
-					"name": "meta.annotation.standard.idl",
+					"name": "meta.decorator.standard.idl",
 					"begin": "@(id|autoid|optional|extensibility|final|appendable|mutable|position|value|key|must_understand|default_literal|default|range|min|max|unit|bit_bound|external|nested|verbatim|service|oneway|ami|non_serialized)\\b",
 					"beginCaptures": {
 						"0": {
-							"name": "storage.type.annotation.standard.idl"
+							"name": "entity.name.function.decorator.idl"
 						}
 					},
 					"end": "(?<=\\))|(?=[;{])|$",
@@ -108,11 +108,11 @@
 					]
 				},
 				{
-					"name": "meta.annotation.idl",
+					"name": "meta.decorator.idl",
 					"begin": "@([a-zA-Z_][a-zA-Z0-9_]*)",
 					"beginCaptures": {
 						"0": {
-							"name": "storage.type.annotation.idl"
+							"name": "entity.name.function.decorator.idl"
 						}
 					},
 					"end": "(?<=\\))|(?=[;{])|$",
