@@ -6,6 +6,9 @@
 			"include": "#comments"
 		},
 		{
+			"include": "#annotations"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -35,6 +38,38 @@
 					"name": "comment.block.idl",
 					"begin": "/\\*",
 					"end": "\\*/"
+				}
+			]
+		},
+		"annotations": {
+			"patterns": [
+				{
+					"name": "meta.annotation.idl",
+					"begin": "@([a-zA-Z_][a-zA-Z0-9_]*)",
+					"beginCaptures": {
+						"0": {
+							"name": "storage.type.annotation.idl"
+						}
+					},
+					"end": "(?<=\\))|(?=[;{])|$",
+					"patterns": [
+						{
+							"begin": "\\(",
+							"end": "\\)",
+							"patterns": [
+								{
+									"include": "#identifier"
+								},
+								{
+									"include": "#literals"
+								},
+								{
+									"name": "punctuation.separator.idl",
+									"match": ","
+								}
+							]
+						}
+					]
 				}
 			]
 		},
