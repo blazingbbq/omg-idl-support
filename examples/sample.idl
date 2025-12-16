@@ -1,0 +1,9 @@
+struct ParentStruct
+{
+    octet parent_member;
+};
+
+struct ChildStruct : ParentStruct
+{
+    long child_member;
+};
